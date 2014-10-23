@@ -1,0 +1,26 @@
+"""
+contacts = {"Shannon": "202-555-1234", "Bridgit": "703-555-9876"}
+
+print contacts["Shannon"]
+
+attendees = {
+'Feb 1' : ['Jen', 'Amy'],
+'Feb 2' : ['Joy', 'Maha']
+}
+
+print attendees
+"""
+
+contacts = {#is {{}} a dictionary within a dictionary?
+'Shannon': {'phone': '202-555-1234','twitter': '@svt827', 'github':'@shannonturner'},
+
+'Joy': {'phone': '202-119-2283', 'twitter': '@joymwhitt', 'github':'joyoftech'},
+
+'Michelle': {'phone': '292-111-2934', 'twitter': '@michelleLB', 'github':'michelleLB'}
+}
+
+for name,contact_info in contacts.items():
+    print "{0}'s contact information is: ".format(name)
+    for contact_type,contact_value in contact_info.items():
+        print"{0}: {1}".format(contact_type,contact_value)
+    print "\n" #this is to put a new line in between contacts
