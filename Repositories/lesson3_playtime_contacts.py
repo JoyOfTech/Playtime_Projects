@@ -1,7 +1,5 @@
 # Challenge Level: Beginner
 
-#NOTE: THIS ISN'T FINISHED AS OF 1/13/15
-
 # NOTE: Please don't use anyone's *real* contact information during these exercises, especially if you're putting it up on Github!
 
 # Background: You have a dictionary with people's contact information.  You want to display that information as an HTML table.
@@ -51,10 +49,11 @@ contacts = {
     'Ndamukong Suh': {'phone': '313-777-3313', 'twitter': '@pumpkinSUHp', 'github': '@DetriotLionsSuh'},
     'Stromae':{'phone': '011 32 2 123 4567', 'twitter': '@Stromae', 'github': '@touslesmemes'},
     'Edie Windsor': {'phone': '202-345-9467', 'twitter': '@EdieWindsor', 'github': '@EdieWindsor'}
+}
 
+# """ = making HTML a string (not actually commenting out)
 
-#why isn't this html working??
- <table border="1">
+html_table = """<table border="1">
  <tr>
  <td colspan="2"> {0} </td>
  </tr>
@@ -64,10 +63,15 @@ contacts = {
  <td> Github: {3} </td>
  </tr>
  </table>
+"""
 
+for c in contacts:
+    name = c   
+    phone = contacts[c]['phone']
+    twitter = contacts[c]['twitter']
+    github = contacts[c]['github']
+    print html_table.format(name, phone, twitter, github)
 
-for contact in contacts.keys():
-    print html_table.format(contact,contacts[contact]["phone"],contacts[contact]["twitter"],contacts[contact]["github"])
 
 # Sample output:
 # <table border="1">
@@ -85,6 +89,16 @@ for contact in contacts.keys():
 
 # Goal 3: Write all of the HTML out to a file called contacts.html and open it in your browser.
 
-# Goal 4: Instead of reading in the contacts from the dictionary above, read them in from contacts.csv, which you can find in lesson_07_(files).
+with open("lesson3.html", "w") as contacts_html:
+    contacts_html.write("<html><body>") #telling it they we're in html
+    for c in contacts:
+        name = c   
+        phone = contacts[c]['phone']
+        twitter = contacts[c]['twitter']
+        github = contacts[c]['github']
+        contacts_html.write(html_table.format(name, phone, twitter, github))
+    contacts_html.write("</body></html>") #closing html
 
-"""
+
+
+# Goal 4: Instead of reading in the contacts from the dictionary above, read them in from contacts.csv, which you can find in lesson_07_(files).
