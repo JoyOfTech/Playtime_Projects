@@ -16,7 +16,9 @@ contacts = {#is {{}} a dictionary within a dictionary?
 
 'Joy': {'phone': '202-119-2283', 'twitter': '@joymwhitt', 'github':'joyoftech'},
 
-'Michelle': {'phone': '292-111-2934', 'twitter': '@michelleLB', 'github':'michelleLB'}
+'Michelle': {'phone': '292-111-2934', 'twitter': '@michelleLB', 'github':'michelleLB'},
+
+'Rachel': {'phone': '292-111-2934', 'twitter': '@rachel_shorey', 'github':'rshorey'}
 }
 
 for name,contact_info in contacts.items():
